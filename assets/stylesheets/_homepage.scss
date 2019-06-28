@@ -1,0 +1,43 @@
+.timer-container {
+    flex-direction: column;
+}
+
+.timer {
+    border-radius: 50%;
+    padding: 4rem;
+}
+
+.time {
+    font-weight: 300;
+    color: $primary;
+}
+
+.controls {
+    width: 100%;
+    margin: 4rem 0;
+}
+
+.focus {
+    color: $primary;
+    background: rgba($color: $primary, $alpha: 0.09);
+    border: 2.5px solid $primary;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    padding: 1rem 2.25rem;
+    margin: 0 1.5rem;
+}
+
+.btn-stop:hover {
+    color: #FFB300;
+    border-color: #FFB300;
+}
+
+.btn-play:hover {
+    color: #C0CA33;
+    border-color: #C0CA33;
+}

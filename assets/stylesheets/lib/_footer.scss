@@ -1,0 +1,23 @@
+.footer {
+    margin: 3rem 0 0 0;
+    border-top: 2px solid rgba(85, 26, 139, 0.15);
+    box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.3);
+}
+
+.list-item {
+    margin: 1rem 1rem;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+    a {
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+        font-size: 1.25rem;
+    }
+
+    a:hover {
+        color: $primary;
+    }
+
+    i {
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+        font-weight: 500;
+    }
+}

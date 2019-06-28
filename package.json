@@ -1,0 +1,28 @@
+{
+  "name": "pomodoro-app",
+  "version": "1.0.0",
+  "description": "This a pomodoro app designed in HTML, CSS & Javascript",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w ./assets/stylesheets/style.scss ./assets/stylesheets/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaharshivam/pomodoro-app.git"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "Sass",
+    "javascript"
+  ],
+  "author": "Shivam Chahar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaharshivam/pomodoro-app/issues"
+  },
+  "homepage": "https://github.com/chaharshivam/pomodoro-app#readme",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

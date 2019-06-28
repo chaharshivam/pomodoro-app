@@ -1,0 +1,14 @@
+/*contains reset*/
+@import "./lib/reset";
+/*contains colors and font family etc.*/
+@import "./lib/vars";
+/*contains the font sizes etc.*/
+@import "./lib/base";
+// contains wrapper, buttons etc.
+@import "./lib/general";
+// for header
+@import "./lib/header";
+// homepage
+@import "homepage";
+// footer
+@import "./lib/footer";

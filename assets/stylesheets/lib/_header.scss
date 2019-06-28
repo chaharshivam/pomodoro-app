@@ -1,0 +1,13 @@
+header {
+    margin-bottom: 3rem;
+}
+
+.logo {
+    padding: 1rem;
+    
+    h1 {
+        font-weight: 300;
+        color: rgba($primary, 0.8);
+        border-bottom: 2px solid $primary;
+    }
+}
