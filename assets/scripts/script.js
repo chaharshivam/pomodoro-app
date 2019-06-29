@@ -4,7 +4,7 @@ const COUNTER   = document.getElementById('counter');
 const AUDIO     = new Audio('assets/sounds/ding.wav');
 
 let interval
-    , currentDuration = 10
+    , currentDuration = 1500
     , alreadyRunning = false;
 
 function startTimer(duration, COUNTER) {
