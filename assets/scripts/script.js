@@ -33,7 +33,7 @@ function startTimer(duration, COUNTER) {
             AUDIO.play();
             alreadyRunning = false;
             clearInterval(interval);
-            currentDuration = 10;
+            currentDuration = 1500;
             return;
         }
 
