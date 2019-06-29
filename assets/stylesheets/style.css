@@ -72,7 +72,7 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   background-color: #4797ec;
-  height: 100vh;
+  height: 100%;
   background-image: url(../images/overlay.png), linear-gradient(180deg, #4797ec, #884beb 80%); }
 
 h1 {
