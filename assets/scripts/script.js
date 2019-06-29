@@ -4,7 +4,7 @@ const COUNTER   = document.getElementById('counter');
 const AUDIO     = new Audio('assets/sounds/ding.wav');
 
 let interval
-    , currentDuration = 1500
+    , currentDuration = 10
     , alreadyRunning = false;
 
 function startTimer(duration, COUNTER) {
@@ -31,6 +31,7 @@ function startTimer(duration, COUNTER) {
         
         if(currentDuration == 0) {
             AUDIO.play();
+            alreadyRunning = false;
             clearInterval(interval);
             currentDuration = 10;
             return;
