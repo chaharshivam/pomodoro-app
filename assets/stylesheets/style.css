@@ -201,6 +201,7 @@ header {
 .footer {
   margin: 1rem 0 0 0;
   border-top: 2px solid rgba(85, 26, 139, 0.15);
+  background: transparent;
   background-image: url(../images/overlay.png); }
 
 .list-item {
@@ -208,7 +209,8 @@ header {
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3); }
   .list-item a {
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    color: #551a8b; }
   .list-item a:hover {
     color: rgba(255, 255, 255, 0.8); }
   .list-item i {
