@@ -6,8 +6,9 @@ html {
   body {
     font-family: $font-family;
     line-height: 1.5;
-    background: $gradiant;
+    background-color: $blue;
     height: 100vh;
+    background-image: url(../images/overlay.png), $gradiant;
   }
   h1 {
     font-size: 3rem;

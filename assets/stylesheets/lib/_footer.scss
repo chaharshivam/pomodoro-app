@@ -1,7 +1,7 @@
 .footer {
-    margin: 3rem 0 0 0;
+    margin: 1rem 0 0 0;
     border-top: 2px solid rgba(85, 26, 139, 0.15);
-    box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.3);
+    background-image: url(../images/overlay.png);
 }
 
 .list-item {
@@ -20,4 +20,10 @@
         box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
         font-weight: 500;
     }
+}
+
+@media all and (min-width: 728px) {
+    .footer {
+        margin-top: 2.625rem;
+    }   
 }

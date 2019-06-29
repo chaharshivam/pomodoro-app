@@ -71,8 +71,9 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
-  background: linear-gradient(180deg, #4797ec, #884beb 80%);
-  height: 100vh; }
+  background-color: #4797ec;
+  height: 100vh;
+  background-image: url(../images/overlay.png), linear-gradient(180deg, #4797ec, #884beb 80%); }
 
 h1 {
   font-size: 3rem; }
@@ -140,7 +141,8 @@ p {
   padding: 0 30px; }
 
 header {
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  background-image: url(../images/overlay.png); }
 
 .logo {
   padding: 1rem; }
@@ -149,14 +151,25 @@ header {
     color: rgba(255, 255, 255, 0.8);
     border-bottom: 2px solid rgba(255, 255, 255, 0.8); }
 
+@media all and (min-width: 728px) {
+  .logo h1 {
+    font-weight: 300;
+    letter-spacing: 0.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8); } }
+
 .timer-container {
   flex-direction: column; }
 
 .timer {
   border-radius: 50%;
+  min-width: 14rem;
+  min-height: 14rem;
   padding: 4rem; }
 
 .time {
+  text-align: center;
+  min-width: 120px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8); }
 
@@ -186,9 +199,9 @@ header {
   border-color: #C0CA33; }
 
 .footer {
-  margin: 3rem 0 0 0;
+  margin: 1rem 0 0 0;
   border-top: 2px solid rgba(85, 26, 139, 0.15);
-  box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.3); }
+  background-image: url(../images/overlay.png); }
 
 .list-item {
   margin: 1rem 1rem;
@@ -201,3 +214,7 @@ header {
   .list-item i {
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
     font-weight: 500; }
+
+@media all and (min-width: 728px) {
+  .footer {
+    margin-top: 2.625rem; } }

@@ -4,10 +4,14 @@
 
 .timer {
     border-radius: 50%;
+    min-width: 14rem;
+    min-height: 14rem;
     padding: 4rem;
 }
 
 .time {
+    text-align: center;
+    min-width: 120px;
     font-weight: 300;
     color: $primary;
 }
@@ -40,4 +44,8 @@
 .btn-play:hover {
     color: #C0CA33;
     border-color: #C0CA33;
+}
+
+@media all and (min-width: 728px) {
+
 }
