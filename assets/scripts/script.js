@@ -4,9 +4,11 @@ const COUNTER   = document.getElementById('counter');
 const AUDIO     = new Audio('assets/sounds/ding.wav');
 
 let interval
-    , currentDuration = 1500;
+    , currentDuration = 1500
+    , alreadyRunning = false;
 
 function startTimer(duration, COUNTER) {
+    alreadyRunning = true;
     let timer = duration
         , minutes
         , seconds;
@@ -42,10 +44,13 @@ function startTimer(duration, COUNTER) {
 }
 
 PLAY.addEventListener('click', function() {
-    startTimer(currentDuration, COUNTER);
+    if(!alreadyRunning) {
+        startTimer(currentDuration, COUNTER);
+    }  
 });
 
 STOP.addEventListener('click', function() {
+    alreadyRunning = false;
     clearInterval(interval); 
     
 });
