@@ -2,6 +2,8 @@ const PLAY      = document.getElementById('btn-play');
 const STOP      = document.getElementById('btn-stop');
 const COUNTER   = document.getElementById('counter');
 const AUDIO     = new Audio('assets/sounds/ding.wav');
+const SHORT_BREAK = document.getElementById('btn-short');
+const LONG_BREAK = document.getElementById('btn-long');
 
 let interval
     , currentDuration = 1500
@@ -34,6 +36,7 @@ function startTimer(duration, COUNTER) {
             alreadyRunning = false;
             clearInterval(interval);
             currentDuration = 1500;
+            takeBreak();
             return;
         }
 
@@ -44,7 +47,18 @@ function startTimer(duration, COUNTER) {
     }, 1000);
 }
 
-PLAY.addEventListener('click', function() {
+function takeBreak() {
+    SHORT_BREAK.classList.remove("break");
+    LONG_BREAK.classList.remove("break");
+}
+
+function removeBreak() {
+    SHORT_BREAK.classList.add("break");
+    LONG_BREAK.classList.add("break");
+}
+
+PLAY.addEventListener('click', function() { 
+    removeBreak();
     if(!alreadyRunning) {
         startTimer(currentDuration, COUNTER);
     }  
@@ -54,4 +68,18 @@ STOP.addEventListener('click', function() {
     alreadyRunning = false;
     clearInterval(interval); 
     
+});
+
+SHORT_BREAK.addEventListener('click', function() {
+    if(!alreadyRunning) {
+        startTimer(300, COUNTER);
+        removeBreak();
+    }  
+});
+
+LONG_BREAK.addEventListener('click', function() {
+    if(!alreadyRunning) {
+        startTimer(900, COUNTER);
+        removeBreak();
+    }  
 });

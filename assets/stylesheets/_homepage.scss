@@ -17,7 +17,6 @@
 }
 
 .controls {
-    width: 100%;
     margin: 4rem 0;
 }
 
@@ -30,20 +29,40 @@
 
 .btn {
     display: inline-block;
+    min-width: 7rem;
     font-size: 1rem;
     border-radius: 2rem;
     padding: 1rem 2.25rem;
-    margin: 0 1.5rem;
+    margin: 0 1.25rem;
 }
 
 .btn-stop:hover {
-    color: #FFB300;
-    border-color: #FFB300;
+    color: $orange;
+    border-color: $orange;
 }
 
 .btn-play:hover {
-    color: #C0CA33;
-    border-color: #C0CA33;
+    color: $green;
+    border-color: $green;
+}
+
+.btn-short:hover {
+    color: $orange;
+    border-color: $orange;
+}
+
+.btn-long:hover {
+    color: $green;
+    border-color: $green;
+}
+
+.break {
+    display: none;
+}
+
+.break-text {
+    font-size: 0.75rem;
+    font-weight: 700;
 }
 
 @media all and (min-width: 728px) {
