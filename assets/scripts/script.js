@@ -46,12 +46,12 @@ function startTimer(duration, COUNTER) {
         }
     }, 1000);
 }
-
+// Display short and long break buttons
 function takeBreak() {
     SHORT_BREAK.classList.remove("break");
     LONG_BREAK.classList.remove("break");
 }
-
+// Remove break buttons
 function removeBreak() {
     SHORT_BREAK.classList.add("break");
     LONG_BREAK.classList.add("break");
