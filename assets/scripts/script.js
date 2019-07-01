@@ -1,13 +1,14 @@
-const PLAY      = document.getElementById('btn-play');
-const STOP      = document.getElementById('btn-stop');
-const COUNTER   = document.getElementById('counter');
-const AUDIO     = new Audio('assets/sounds/ding.wav');
-const SHORT_BREAK = document.getElementById('btn-short');
-const LONG_BREAK = document.getElementById('btn-long');
+const PLAY          = document.getElementById('btn-play');
+const STOP          = document.getElementById('btn-stop');
+const COUNTER       = document.getElementById('counter');
+const AUDIO         = new Audio('assets/sounds/ding.wav');
+const SHORT_BREAK   = document.getElementById('btn-short');
+const LONG_BREAK    = document.getElementById('btn-long');
 
 let interval
     , currentDuration = 1500
-    , alreadyRunning = false;
+    , alreadyRunning = false
+    , isBreak = false;
 
 function startTimer(duration, COUNTER) {
     alreadyRunning = true;
@@ -36,7 +37,16 @@ function startTimer(duration, COUNTER) {
             alreadyRunning = false;
             clearInterval(interval);
             currentDuration = 1500;
-            takeBreak();
+            
+            if(!isBreak) {
+                removeBreak(SHORT_BREAK);
+                removeBreak(LONG_BREAK);
+            } else {
+                removeBreak(PLAY);
+                isBreak = false;
+            }
+            // make pause button disapper after timer finishes
+            addBreak(STOP);
             return;
         }
 
@@ -46,19 +56,22 @@ function startTimer(duration, COUNTER) {
         }
     }, 1000);
 }
-// Display short and long break buttons
-function takeBreak() {
-    SHORT_BREAK.classList.remove("break");
-    LONG_BREAK.classList.remove("break");
+
+function addBreak(PROP) {
+    PROP.classList.add('break');
 }
-// Remove break buttons
-function removeBreak() {
-    SHORT_BREAK.classList.add("break");
-    LONG_BREAK.classList.add("break");
+
+function removeBreak(PROP) {
+    PROP.classList.remove('break');
 }
 
 PLAY.addEventListener('click', function() { 
-    removeBreak();
+    addBreak(LONG_BREAK);
+    addBreak(SHORT_BREAK);
+    // make play button invisible after click
+    addBreak(PLAY);
+    // make pause button visible
+    removeBreak(STOP);
     if(!alreadyRunning) {
         startTimer(currentDuration, COUNTER);
     }  
@@ -66,20 +79,30 @@ PLAY.addEventListener('click', function() {
 
 STOP.addEventListener('click', function() {
     alreadyRunning = false;
+    // make play button visible
+    removeBreak(PLAY);
+    // make pause button invisible
+    addBreak(STOP);
     clearInterval(interval); 
     
 });
 
 SHORT_BREAK.addEventListener('click', function() {
+    isBreak = true;
+    removeBreak(STOP);
+    addBreak(SHORT_BREAK);
+    addBreak(LONG_BREAK);
     if(!alreadyRunning) {
         startTimer(300, COUNTER);
-        removeBreak();
     }  
 });
 
 LONG_BREAK.addEventListener('click', function() {
+    isBreak = true;
+    removeBreak(STOP);
+    addBreak(SHORT_BREAK);
+    addBreak(LONG_BREAK);
     if(!alreadyRunning) {
         startTimer(900, COUNTER);
-        removeBreak();
     }  
 });

@@ -34,6 +34,7 @@
     border-radius: 2rem;
     padding: 1rem 2.25rem;
     margin: 0 1.25rem;
+    grid-column: span 2;
 }
 
 .btn-stop:hover {
@@ -46,11 +47,16 @@
     border-color: $green;
 }
 
+.btn-short {
+    grid-column: span 1;
+}
 .btn-short:hover {
     color: $orange;
     border-color: $orange;
 }
-
+.btn-long {
+    grid-column: span 1;
+}
 .btn-long:hover {
     color: $green;
     border-color: $green;

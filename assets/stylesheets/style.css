@@ -205,7 +205,8 @@ header {
   font-size: 1rem;
   border-radius: 2rem;
   padding: 1rem 2.25rem;
-  margin: 0 1.25rem; }
+  margin: 0 1.25rem;
+  grid-column: span 2; }
 
 .btn-stop:hover {
   color: #FFB300;
@@ -215,9 +216,15 @@ header {
   color: #C0CA33;
   border-color: #C0CA33; }
 
+.btn-short {
+  grid-column: span 1; }
+
 .btn-short:hover {
   color: #FFB300;
   border-color: #FFB300; }
+
+.btn-long {
+  grid-column: span 1; }
 
 .btn-long:hover {
   color: #C0CA33;
