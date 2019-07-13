@@ -175,6 +175,49 @@ header {
     color: rgba(255, 255, 255, 0.8);
     border-bottom: 2px solid rgba(255, 255, 255, 0.8); } }
 
+.todo-container {
+  align-items: flex-start; }
+
+.grid-col-3 {
+  grid-template-columns: 1fr; }
+
+.todo {
+  padding: 1rem; }
+  .todo form {
+    text-align: center; }
+
+.todo-title {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  text-align: center; }
+
+.todo-input {
+  width: 90%;
+  outline: 0;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  background: none;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem; }
+
+.todo-item {
+  width: 90%;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+  cursor: pointer; }
+  .todo-item i:hover {
+    color: #FFB300; }
+
+.checked span {
+  color: #C0CA33;
+  text-decoration: line-through; }
+
 .timer-container {
   flex-direction: column; }
 
@@ -236,6 +279,10 @@ header {
 .break-text {
   font-size: 0.75rem;
   font-weight: 700; }
+
+@media all and (min-width: 728px) {
+  .grid-col-3 {
+    grid-template-columns: repeat(3, 1fr); } }
 
 .footer {
   margin: 0;

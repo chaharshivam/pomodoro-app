@@ -1,3 +1,59 @@
+.todo-container {
+    align-items: flex-start;
+}
+
+.grid-col-3 {
+    grid-template-columns: 1fr;
+}
+
+.todo {
+    padding: 1rem;
+
+    form {
+        text-align: center;
+    }
+}
+
+.todo-title {
+    color: $primary;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.todo-input {
+    width: 90%;
+    outline: 0;
+    font-size: 1rem;
+    color: $primary;
+    border: 1.5px solid $primary;
+    background: none;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.todo-item {
+    width: 90%;
+    color: $primary;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    border-bottom: 1.5px solid $primary;
+    margin: 0 auto;
+    cursor: pointer;
+
+    i:hover {
+        color: $orange;
+    }
+}
+
+.checked {
+    span {
+        color: $green;
+        text-decoration: line-through;
+    }
+}
+
 .timer-container {
     flex-direction: column;
 }
@@ -72,5 +128,7 @@
 }
 
 @media all and (min-width: 728px) {
-
+    .grid-col-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
