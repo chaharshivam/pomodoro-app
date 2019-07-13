@@ -6,12 +6,13 @@ const SHORT_BREAK   = document.getElementById('btn-short');
 const LONG_BREAK    = document.getElementById('btn-long');
 
 let interval
-    , currentDuration = 1500
-    , alreadyRunning = false
-    , isBreak = false;
+    , currentDuration   = 10
+    , alreadyRunning    = false
+    , isBreak           = false;
 
 function startTimer(duration, COUNTER) {
     alreadyRunning = true;
+    
     let timer = duration
         , minutes
         , seconds;
@@ -36,7 +37,7 @@ function startTimer(duration, COUNTER) {
             AUDIO.play();
             alreadyRunning = false;
             clearInterval(interval);
-            currentDuration = 1500;
+            currentDuration = 10;
             
             if(!isBreak) {
                 removeBreak(SHORT_BREAK);
@@ -93,7 +94,7 @@ SHORT_BREAK.addEventListener('click', function() {
     addBreak(SHORT_BREAK);
     addBreak(LONG_BREAK);
     if(!alreadyRunning) {
-        startTimer(300, COUNTER);
+        startTimer(3, COUNTER);
     }  
 });
 
@@ -103,6 +104,6 @@ LONG_BREAK.addEventListener('click', function() {
     addBreak(SHORT_BREAK);
     addBreak(LONG_BREAK);
     if(!alreadyRunning) {
-        startTimer(900, COUNTER);
+        startTimer(9, COUNTER);
     }  
 });
