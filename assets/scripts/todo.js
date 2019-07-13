@@ -16,7 +16,8 @@ INPUT.addEventListener('keypress', (keypressed) => {
         if (INPUT.value.length == 0) return;
 
         let todo = `<li id="item-${currentTodo}" 
-            class="todo-item flex-between"><span class="">${INPUT.value}</span><i id="delete-${currentTodo}" 
+            class="todo-item flex-between"><span 
+            class="">${INPUT.value}</span><i id="delete-${currentTodo}" 
             class="fas fa-trash-alt"></i></li>`;
         todos.push(todo);
         INPUT.value = '';

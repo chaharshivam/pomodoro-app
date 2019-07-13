@@ -198,17 +198,20 @@ header {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
   border: 1.5px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
   background: none;
   padding: 0.6rem;
   border-radius: 0.5rem;
   margin-bottom: 1rem; }
+
+.todo-list {
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3); }
 
 .todo-item {
   width: 90%;
   color: rgba(255, 255, 255, 0.8);
   padding: 0.5rem;
   font-size: 1.25rem;
-  border-bottom: 1.5px solid rgba(255, 255, 255, 0.8);
   margin: 0 auto;
   cursor: pointer; }
   .todo-item i:hover {

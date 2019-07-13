@@ -27,10 +27,15 @@
     font-size: 1rem;
     color: $primary;
     border: 1.5px solid $primary;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
     background: none;
     padding: 0.6rem;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
+}
+
+.todo-list {
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
 }
 
 .todo-item {
@@ -38,7 +43,6 @@
     color: $primary;
     padding: 0.5rem;
     font-size: 1.25rem;
-    border-bottom: 1.5px solid $primary;
     margin: 0 auto;
     cursor: pointer;
 
