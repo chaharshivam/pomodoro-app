@@ -22,7 +22,17 @@
             </div>
         </header>
         <!-- Main -->
-        <main>
+        <main class="grid-col-3">
+            <section class="flex-center todo-container">
+                <div class="todo">
+                    <h2 class="todo-title">Whats's Your Focus Today?</h2>
+                    <form action="#">
+                        <input class="todo-input" type="text">
+                    </form>
+                    <ul class="todo-list">
+                    </ul>
+                </div>
+            </section>
             <section class="wrapper timer-container flex-center">
                 <div class="focus timer flex-center">
                     <h2 id="counter" class="time">25:00</h2>
@@ -74,5 +84,6 @@
         </footer>
         <!-- Scripts -->
         <script src="assets/scripts/script.js"></script>
+        <script src="assets/scripts/todo.js"></script>
     </body>
 </html>
