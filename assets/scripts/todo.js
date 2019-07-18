@@ -1,11 +1,25 @@
-const INPUT     = document.getElementsByClassName('todo-input')[0];
-const LIST      = document.getElementsByClassName('todo-list')[0];
+const INPUT     = document.querySelector('.todo-input');
+const LIST      = document.querySelector('.todo-list');
 
 let todos       = [];
 let currentTodo = 0;
 
+let newTodo = (content) => {
+    let li = document.createElement('li');
+    let del = document.createElement('i');
+    
+    li.classList.add('todo-item', 'flex-between');
+
+    del.classList.add('fas', 'fa-trash-alt');
+
+    li.innerHTML = `<span>${content}</span>`;
+    li.appendChild(del);
+
+    return li;
+}
+
 let display = () => {
-    LIST.innerHTML = todos.reduce( (s, item) => s+item, '');
+    LIST.appendChild(todos[currentTodo]);
     currentTodo++;
 }
 
@@ -15,10 +29,7 @@ INPUT.addEventListener('keypress', (keypressed) => {
         INPUT.value = INPUT.value.trim();
         if (INPUT.value.length == 0) return;
 
-        let todo = `<li id="item-${currentTodo}" 
-            class="todo-item flex-between"><span 
-            class="">${INPUT.value}</span><i id="delete-${currentTodo}" 
-            class="fas fa-trash-alt"></i></li>`;
+        let todo = newTodo( INPUT.value );
         todos.push(todo);
         INPUT.value = '';
         display();
@@ -26,19 +37,31 @@ INPUT.addEventListener('keypress', (keypressed) => {
 });
 
 LIST.addEventListener('click', (e) => {
-    let currentItem = e.target;
+    if(e.path[0].localName == 'i') {
+        LIST.removeChild( e.path[1] );
+    }
+});
 
-    if(currentItem.id.includes('item')) {
-        if(currentItem.classList.contains('checked')) {
-            currentItem.classList.remove('checked');
-        } else {
-            currentItem.classList.add('checked');
-        }
+LIST.addEventListener('dblclick', (e) => {
+    if(e.path[0].localName == 'span') {
+        let update = document.createElement('input');
+        update.value = e.path[0].textContent;
+        update.classList.add('todo-input');
+        
+        e.path[1].innerHTML = '';
+        e.path[1].appendChild(update);
+       
     }
 
-    if(currentItem.id.includes('delete')) {
-        delete todos[ currentItem.id[currentItem.id.length - 1] ];
-        display();
-        currentTodo--;
+    if(e.path[0].localName == 'li') {
+        e.path[0].classList.add('checked');
+    }
+});
+
+LIST.addEventListener('keydown', (e) => {
+    if (e.which == 13) {
+        let updateLi = newTodo(e.target.value);
+        e.path[1].outerHTML = '';
+        LIST.appendChild(updateLi);
     }
 });
